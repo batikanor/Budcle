@@ -11,7 +11,7 @@
 - Team members and contact details: fill from the team roster.
 - Project name: Budcle.
 - Code repo: https://github.com/batikanor/Budcle
-- Live deployment: https://submission-site-4jffqbr9w-batikanors-projects.vercel.app
+- Live deployment: https://submission-site-9qd37823p-batikanors-projects.vercel.app
 - Video: 2-3 minute demo recording of the static viewer plus terminal scan.
 - Tracks/bounties: Circle Agentic Commerce Track, Agentic Commerce payments/x402/automation, and any Circle-specific bounty that rewards x402 or Agent Wallet enablement.
 
@@ -44,7 +44,7 @@ Official context to reference:
 
 Use two browser/terminal windows:
 
-1. Open the Vercel report viewer: https://submission-site-4jffqbr9w-batikanors-projects.vercel.app
+1. Open the Vercel report viewer: https://submission-site-9qd37823p-batikanors-projects.vercel.app
 2. Show the Firecrawl analysis: score, missing Circle docs, narrow x402 coverage, and generated issue draft.
 3. Use the live x402-style probe buttons to show `402 Payment Required` first, then the demo receipt shape. Say clearly that it is a non-settling demo probe.
 4. Switch to terminal and run:

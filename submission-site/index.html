@@ -166,7 +166,7 @@
       .system-map {
         position: relative;
         min-height: 260px;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .map-svg {
@@ -190,6 +190,13 @@
         color: var(--green-ink);
         text-align: center;
         font-weight: 800;
+        cursor: help;
+      }
+
+      .score-badge:focus-visible,
+      .map-hotspot:focus-visible {
+        box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.26);
+        outline: none;
       }
 
       .score-badge strong {
@@ -202,6 +209,93 @@
         display: block;
         margin-top: 4px;
         font-size: 12px;
+      }
+
+      .map-hotspot {
+        all: unset;
+        position: absolute;
+        z-index: 5;
+        border-radius: 8px;
+        cursor: help;
+      }
+
+      .map-hotspot:hover {
+        background: rgba(23, 105, 224, 0.08);
+        box-shadow: inset 0 0 0 2px rgba(23, 105, 224, 0.36);
+      }
+
+      .hot-agent {
+        left: 5%;
+        top: 43%;
+        width: 16%;
+        height: 29%;
+      }
+
+      .hot-circle {
+        left: 28%;
+        top: 43%;
+        width: 17%;
+        height: 29%;
+      }
+
+      .hot-x402 {
+        left: 55%;
+        top: 43%;
+        width: 17%;
+        height: 29%;
+      }
+
+      .hot-api {
+        left: 82%;
+        top: 43%;
+        width: 13%;
+        height: 29%;
+      }
+
+      .pitch-coach {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: 16px;
+        align-items: stretch;
+        margin-top: 14px;
+        background: #111827;
+        color: #fff;
+      }
+
+      .coach-label {
+        display: grid;
+        align-content: center;
+        gap: 8px;
+        border-right: 1px solid rgba(255, 255, 255, 0.14);
+        padding-right: 14px;
+      }
+
+      .coach-label strong {
+        font-size: 20px;
+      }
+
+      .coach-label span {
+        color: #cbd5e1;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .coach-script {
+        display: grid;
+        align-content: center;
+        gap: 7px;
+      }
+
+      .coach-script h2 {
+        color: #fff;
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .coach-script p {
+        color: #e5e7eb;
+        line-height: 1.45;
+        font-size: 16px;
       }
 
       .grid {
@@ -453,6 +547,19 @@
         color: var(--accent);
       }
 
+      button.map-hotspot {
+        all: unset;
+        position: absolute;
+        z-index: 5;
+        border-radius: 8px;
+        cursor: help;
+      }
+
+      button.map-hotspot:hover {
+        background: rgba(23, 105, 224, 0.08);
+        box-shadow: inset 0 0 0 2px rgba(23, 105, 224, 0.36);
+      }
+
       pre {
         white-space: pre-wrap;
         overflow-wrap: anywhere;
@@ -561,7 +668,12 @@
 
     <main class="wrap">
       <section class="hero">
-        <div class="panel hero-copy">
+        <div
+          class="panel hero-copy pitch-point"
+          tabindex="0"
+          data-pitch-title="Opening"
+          data-pitch-script="Budcle is not another API. It is the tool that helps existing API projects become payable by agents using Circle wallets and x402. In one sentence: we turn useful open-source APIs into agent-commerce suppliers."
+        >
           <div>
             <h1>Turn APIs into agent-payable suppliers.</h1>
             <p class="subtitle">Budcle scans a repo, finds Circle/x402 gaps, and drafts the maintainer issue.</p>
@@ -602,14 +714,65 @@
             <path d="M690 190 C635 246, 184 246, 86 190" fill="none" stroke="#98a2b3" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrowhead)"></path>
             <text x="383" y="238" text-anchor="middle" font-size="13" font-weight="800" fill="#667085">Budcle grows the supply side</text>
           </svg>
-          <div class="score-badge"><div><strong>88</strong><span>Firecrawl readiness</span></div></div>
+          <button
+            class="map-hotspot hot-agent pitch-point"
+            type="button"
+            aria-label="Agent pitch point"
+            data-pitch-title="1. Agent demand"
+            data-pitch-script="Start here: agents need API results on demand. Today they usually need accounts, dashboards, API keys, and prepaid credits. That is friction for autonomous commerce."
+          ></button>
+          <button
+            class="map-hotspot hot-circle pitch-point"
+            type="button"
+            aria-label="Circle wallet pitch point"
+            data-pitch-title="2. Circle rail"
+            data-pitch-script="Circle gives the agent a wallet and USDC payment rail. That solves the buyer side. Budcle focuses on the seller side: which APIs are ready to accept those payments?"
+          ></button>
+          <button
+            class="map-hotspot hot-x402 pitch-point"
+            type="button"
+            aria-label="x402 pitch point"
+            data-pitch-title="3. x402 paid route"
+            data-pitch-script="x402 is the clean paid API pattern: request a resource, get a 402 payment challenge, pay, then receive the data. Budcle tells maintainers exactly which route to expose first."
+          ></button>
+          <button
+            class="map-hotspot hot-api pitch-point"
+            type="button"
+            aria-label="API receipt pitch point"
+            data-pitch-title="4. API + receipt"
+            data-pitch-script="The finished endpoint should return the API result plus a receipt: amount, network, resource, request hash, result hash, and job id. That is what agents can trust and audit."
+          ></button>
+          <div
+            class="score-badge pitch-point"
+            tabindex="0"
+            data-pitch-title="Firecrawl score"
+            data-pitch-script="The 88 score means Firecrawl is a strong candidate, not that it is fully done. Budcle found real x402 primitives, but also found missing Circle marketplace docs, narrow paid endpoint coverage, and weak receipt metadata."
+          >
+            <div><strong>88</strong><span>strong candidate</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel pitch-coach" aria-live="polite">
+        <div class="coach-label">
+          <strong>Say this</strong>
+          <span>Hover or focus any tile</span>
+        </div>
+        <div class="coach-script">
+          <h2 id="coach-title">Opening</h2>
+          <p id="coach-script">Budcle is the missing supply-side tool for agentic commerce: it scans existing API projects and tells maintainers how to become Circle/x402-ready.</p>
         </div>
       </section>
 
       <section class="panel" style="margin-top: 14px">
         <h2>Firecrawl diagnosis</h2>
         <div class="grid">
-          <article class="tile" tabindex="0">
+          <article
+            class="tile pitch-point"
+            tabindex="0"
+            data-pitch-title="Auth finding"
+            data-pitch-script="Say: Firecrawl already has auth, teams, and credit controls. We are not asking them to rip that out. We recommend a parallel x402 paid path for agents."
+          >
             <div class="tile-top">
               <div class="icon">
                 <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -623,7 +786,12 @@
             <div class="reveal">Firecrawl already has API-key auth and credit middleware. Budcle recommends adding x402 as a parallel paid path, not replacing the existing business model.</div>
           </article>
 
-          <article class="tile" tabindex="0">
+          <article
+            class="tile pitch-point"
+            tabindex="0"
+            data-pitch-title="x402 finding"
+            data-pitch-script="Say: this is the strongest proof that Budcle is useful. Firecrawl already has x402 on search, but scrape and crawl are the more valuable agent-commerce endpoints. Budcle identifies that exact gap."
+          >
             <div class="tile-top">
               <div class="icon">
                 <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -638,7 +806,12 @@
             <div class="reveal">Active x402 middleware exists on search. Core scrape, crawl, parse, and extract routes are still the obvious next paid endpoints.</div>
           </article>
 
-          <article class="tile" tabindex="0">
+          <article
+            class="tile pitch-point"
+            tabindex="0"
+            data-pitch-title="Marketplace finding"
+            data-pitch-script="Say: for Circle Agent Marketplace, code is not enough. A service needs price, supported network, schemas, response shape, and payment guidance. Budcle checks those supplier-readiness details."
+          >
             <div class="tile-top">
               <div class="icon">
                 <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -653,7 +826,12 @@
             <div class="reveal">Budcle did not find Circle Agent Wallet or marketplace-facing docs: price, network, schema, response shape, and retry guidance.</div>
           </article>
 
-          <article class="tile" tabindex="0">
+          <article
+            class="tile pitch-point"
+            tabindex="0"
+            data-pitch-title="Receipt finding"
+            data-pitch-script="Say: agents need receipts because they are spending money without a human reading every response. Budcle pushes maintainers toward auditable paid API responses."
+          >
             <div class="tile-top">
               <div class="icon">
                 <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -673,30 +851,30 @@
         <div class="panel">
           <h2>What Budcle does</h2>
           <div class="flow">
-            <div class="step" tabindex="0"><b>Scan</b><span>repo</span><i class="arrow"></i><div class="reveal">Reads source files and route declarations from a local clone.</div></div>
-            <div class="step" tabindex="0"><b>Score</b><span>readiness</span><i class="arrow"></i><div class="reveal">Detects auth, billing, rate limits, x402, Circle docs, schemas, and receipts.</div></div>
-            <div class="step" tabindex="0"><b>Draft</b><span>issue</span><i class="arrow"></i><div class="reveal">Generates a maintainer-ready GitHub issue with endpoint-specific recommendations.</div></div>
-            <div class="step" tabindex="0"><b>Approve</b><span>human gate</span><div class="reveal">No maintainer outreach happens without explicit human approval.</div></div>
+            <div class="step pitch-point" tabindex="0" data-pitch-title="Workflow: scan" data-pitch-script="Say: first we clone or point Budcle at a repo. For the demo, Firecrawl is cloned locally in a gitignored folder, so we analyze it without copying its code."><b>Scan</b><span>repo</span><i class="arrow"></i><div class="reveal">Reads source files and route declarations from a local clone.</div></div>
+            <div class="step pitch-point" tabindex="0" data-pitch-title="Workflow: score" data-pitch-script="Say: then Budcle scores what matters for agentic commerce: routes, auth, billing, rate limits, x402, schemas, Circle docs, and receipts."><b>Score</b><span>readiness</span><i class="arrow"></i><div class="reveal">Detects auth, billing, rate limits, x402, Circle docs, schemas, and receipts.</div></div>
+            <div class="step pitch-point" tabindex="0" data-pitch-title="Workflow: draft" data-pitch-script="Say: the output is not just a score. It is a maintainer-ready issue with the endpoint to add, the expected payment behavior, and the receipt fields."><b>Draft</b><span>issue</span><i class="arrow"></i><div class="reveal">Generates a maintainer-ready GitHub issue with endpoint-specific recommendations.</div></div>
+            <div class="step pitch-point" tabindex="0" data-pitch-title="Workflow: approve" data-pitch-script="Say: we deliberately keep outreach human-approved. Budcle creates the draft, but it does not spam maintainers or open issues without permission."><b>Approve</b><span>human gate</span><div class="reveal">No maintainer outreach happens without explicit human approval.</div></div>
           </div>
         </div>
 
         <div class="panel">
           <h2>Signals</h2>
           <div class="signal-board">
-            <div class="signal" tabindex="0"><span class="dot"></span><strong>Routes</strong><div class="reveal">80 endpoint candidates detected in Firecrawl.</div></div>
-            <div class="signal" tabindex="0"><span class="dot"></span><strong>Billing</strong><div class="reveal">Credit and subscription primitives already exist.</div></div>
-            <div class="signal" tabindex="0"><span class="dot"></span><strong>x402</strong><div class="reveal">x402 dependencies and active middleware are present.</div></div>
-            <div class="signal" tabindex="0"><span class="dot missing"></span><strong>Receipts</strong><div class="reveal">Receipt/proof fields are not clearly documented.</div></div>
-            <div class="signal missing" tabindex="0"><span class="dot"></span><strong>Circle docs</strong><div class="reveal">Marketplace and Agent Wallet language is missing.</div></div>
-            <div class="signal" tabindex="0"><span class="dot"></span><strong>Schemas</strong><div class="reveal">Schema-like source signals exist, but paid endpoint listing metadata should be explicit.</div></div>
-            <div class="signal" tabindex="0"><span class="dot"></span><strong>Tests</strong><div class="reveal">Scanner, wallet wrappers, and demo probe all have passing tests.</div></div>
-            <div class="signal" tabindex="0"><span class="dot"></span><strong>Report</strong><div class="reveal">Markdown and JSON reports are generated from the ignored Firecrawl clone.</div></div>
+            <div class="signal pitch-point" tabindex="0" data-pitch-title="Signal: routes" data-pitch-script="Say: Budcle found 80 route candidates, so it can reason about the real API surface instead of giving generic advice."><span class="dot"></span><strong>Routes</strong><div class="reveal">80 endpoint candidates detected in Firecrawl.</div></div>
+            <div class="signal pitch-point" tabindex="0" data-pitch-title="Signal: billing" data-pitch-script="Say: existing credits and billing are a positive signal. They mean the project already understands paid usage; x402 can be an additive agent channel."><span class="dot"></span><strong>Billing</strong><div class="reveal">Credit and subscription primitives already exist.</div></div>
+            <div class="signal pitch-point" tabindex="0" data-pitch-title="Signal: x402" data-pitch-script="Say: x402 is already present, which is why Firecrawl is an especially strong candidate. Budcle turns that partial implementation into a clear completion plan."><span class="dot"></span><strong>x402</strong><div class="reveal">x402 dependencies and active middleware are present.</div></div>
+            <div class="signal pitch-point" tabindex="0" data-pitch-title="Signal: receipts" data-pitch-script="Say: the missing receipt trail is one of the clearest product gaps. Agent payments need auditable responses, not just data blobs."><span class="dot missing"></span><strong>Receipts</strong><div class="reveal">Receipt/proof fields are not clearly documented.</div></div>
+            <div class="signal missing pitch-point" tabindex="0" data-pitch-title="Signal: Circle docs" data-pitch-script="Say: the scan did not find Circle Agent Wallet or Marketplace language. That is exactly the kind of gap that blocks a project from becoming discoverable to agents."><span class="dot"></span><strong>Circle docs</strong><div class="reveal">Marketplace and Agent Wallet language is missing.</div></div>
+            <div class="signal pitch-point" tabindex="0" data-pitch-title="Signal: schemas" data-pitch-script="Say: schemas exist in the codebase, but paid endpoint listing metadata should be explicit so an agent can discover how to call it."><span class="dot"></span><strong>Schemas</strong><div class="reveal">Schema-like source signals exist, but paid endpoint listing metadata should be explicit.</div></div>
+            <div class="signal pitch-point" tabindex="0" data-pitch-title="Signal: tests" data-pitch-script="Say: this is working software, not only a mockup. The scanner tests, Circle wallet wrapper tests, and x402 demo probe test all pass."><span class="dot"></span><strong>Tests</strong><div class="reveal">Scanner, wallet wrappers, and demo probe all have passing tests.</div></div>
+            <div class="signal pitch-point" tabindex="0" data-pitch-title="Signal: report" data-pitch-script="Say: the report is generated from Firecrawl source analysis. It outputs Markdown for humans and JSON for future automation."><span class="dot"></span><strong>Report</strong><div class="reveal">Markdown and JSON reports are generated from the ignored Firecrawl clone.</div></div>
           </div>
         </div>
       </section>
 
       <section class="two">
-        <div class="panel">
+        <div class="panel pitch-point" tabindex="0" data-pitch-title="Live probe" data-pitch-script="Say: this probe demonstrates the behavior Budcle recommends: without payment, the endpoint returns 402. With demo approval, it returns data plus a receipt shape. It is intentionally demo-only, not a fake real payment.">
           <h2>Live x402-style probe</h2>
           <div class="probe-shell">
             <div class="probe-actions">
@@ -708,7 +886,7 @@
           </div>
         </div>
 
-        <div class="panel">
+        <div class="panel pitch-point" tabindex="0" data-pitch-title="Maintainer issue" data-pitch-script="Say: this is the practical output. A maintainer gets a scoped issue: add /x402/scrape, return a 402 challenge, verify payment, run the existing pipeline, bypass credits for that paid call, and return receipt metadata.">
           <h2>Generated maintainer issue</h2>
           <div class="issue-card" tabindex="0">
             <div>
@@ -726,7 +904,30 @@
     </main>
 
     <script>
+      const coachTitle = document.getElementById("coach-title");
+      const coachScript = document.getElementById("coach-script");
+
+      function setPitch(title, script) {
+        coachTitle.innerText = title;
+        coachScript.innerText = script;
+      }
+
+      document.querySelectorAll(".pitch-point").forEach(element => {
+        const title = element.dataset.pitchTitle;
+        const script = element.dataset.pitchScript;
+        if (!title || !script) return;
+        element.addEventListener("mouseenter", () => setPitch(title, script));
+        element.addEventListener("focus", () => setPitch(title, script));
+        element.addEventListener("click", () => setPitch(title, script));
+      });
+
       async function probe(approved) {
+        setPitch(
+          approved ? "Probe: demo receipt" : "Probe: 402 challenge",
+          approved
+            ? "Say: with demo approval, the endpoint returns the protected data and the receipt shape Budcle wants maintainers to implement. In production this approval would be real x402 payment verification."
+            : "Say: without payment, the endpoint returns 402 Payment Required. This is the x402 pattern: the API tells the agent how to pay before it releases the resource.",
+        );
         const output = document.getElementById("probe");
         output.innerText = "Calling /api/x402-scrape...";
         const response = await fetch("/api/x402-scrape", {
