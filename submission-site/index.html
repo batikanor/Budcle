@@ -273,6 +273,10 @@
         margin-top: 18px;
       }
 
+      .probe-output {
+        min-height: 180px;
+      }
+
       .footer-note {
         margin-top: 18px;
         color: var(--muted);
@@ -376,6 +380,39 @@ npm run analyze:firecrawl</pre>
         </div>
       </section>
 
+      <section class="panel" style="margin-top: 18px">
+        <h2>Why This Fits Circle</h2>
+        <div class="findings">
+          <article class="finding">
+            <span class="tag">x402</span>
+            <h3>Turns existing APIs into agent-payable candidates</h3>
+            <p>Budcle finds the smallest route-level path from dashboard/API-key access to a USDC-payable x402 endpoint.</p>
+          </article>
+          <article class="finding">
+            <span class="tag">Marketplace</span>
+            <h3>Checks supply-side readiness</h3>
+            <p>It flags missing schemas, pricing, receipt metadata, and Circle Agent Wallet documentation needed for service discovery.</p>
+          </article>
+          <article class="finding">
+            <span class="tag">Automation</span>
+            <h3>Creates maintainer-ready adoption work</h3>
+            <p>The generated issue draft explains what to add without contacting maintainers until a human approves.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top: 18px">
+        <h2>Live x402-Style Probe</h2>
+        <p class="lede" style="margin-bottom: 14px">
+          This endpoint demonstrates the challenge and receipt shape Budcle recommends. It is demo-only and does not settle real USDC.
+        </p>
+        <div class="actions" style="margin-top: 0; margin-bottom: 12px">
+          <button type="button" onclick="probe(false)">Request without payment</button>
+          <button class="secondary" type="button" onclick="probe(true)">Request with demo approval</button>
+        </div>
+        <pre id="probe" class="probe-output">Click a probe button to call /api/x402-scrape.</pre>
+      </section>
+
       <section class="panel issue">
         <h2>Generated Maintainer Issue Draft</h2>
         <pre id="issue">Title: Add Circle Agent Wallet / x402 paid access for AI agents
@@ -408,7 +445,17 @@ POST /x402/search or POST /x402/scrape
         const text = document.getElementById(id).innerText;
         await navigator.clipboard.writeText(text);
       }
+
+      async function probe(approved) {
+        const output = document.getElementById("probe");
+        output.innerText = "Calling /api/x402-scrape...";
+        const response = await fetch("/api/x402-scrape", {
+          method: "POST",
+          headers: approved ? { "x-budcle-demo-payment": "approved" } : {},
+        });
+        const text = await response.text();
+        output.innerText = `HTTP ${response.status}\n\n${text}`;
+      }
     </script>
   </body>
 </html>
-

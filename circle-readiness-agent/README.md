@@ -16,7 +16,7 @@ npm run analyze:firecrawl
 Analyze any local repository:
 
 ```bash
-node dist/cli.js --repo /path/to/repo --name "Project Name" --url https://github.com/org/repo --out reports/project-circle-readiness.md
+node dist/src/cli.js --repo /path/to/repo --name "Project Name" --url https://github.com/org/repo --out reports/project-circle-readiness.md
 ```
 
 ## What It Checks

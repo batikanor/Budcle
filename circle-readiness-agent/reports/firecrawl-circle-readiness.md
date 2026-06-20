@@ -1,6 +1,6 @@
 # Firecrawl Circle/x402 Readiness Report
 
-Analyzed: 2026-06-20T12:25:27.554Z
+Analyzed: 2026-06-20T12:35:13.594Z
 
 Repository: https://github.com/firecrawl/firecrawl
 Existing x402 issue: https://github.com/firecrawl/firecrawl/issues/3279

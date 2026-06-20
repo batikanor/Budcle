@@ -5,7 +5,7 @@
     "url": "https://github.com/firecrawl/firecrawl",
     "existingIssueUrl": "https://github.com/firecrawl/firecrawl/issues/3279"
   },
-  "analyzedAt": "2026-06-20T12:25:27.554Z",
+  "analyzedAt": "2026-06-20T12:35:13.594Z",
   "summary": {
     "score": 88,
     "verdict": "Strong candidate: useful primitives exist, but production Circle readiness may still need endpoint coverage, docs, and receipts.",
