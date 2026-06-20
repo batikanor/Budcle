@@ -1,0 +1,351 @@
+{
+  "input": {
+    "repoPath": "/Users/batikanorpava/Documents/other_development/2026-06-berlin-blockchain-agentic-ai/budcle/.ignored-upstream/browserless",
+    "name": "Browserless",
+    "url": "https://github.com/browserless/browserless"
+  },
+  "analyzedAt": "2026-06-20T13:12:38.061Z",
+  "summary": {
+    "score": 38,
+    "verdict": "Early candidate: likely needs a new paid route, schemas, and billing/payment plumbing.",
+    "estimatedEffort": "high"
+  },
+  "filesScanned": 216,
+  "endpoints": [],
+  "signals": [
+    {
+      "id": "api_routes",
+      "label": "HTTP API routes detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "auth",
+      "label": "Existing auth/API-key middleware detected",
+      "present": true,
+      "weight": 10,
+      "evidence": [
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 38,
+          "text": "The Browserless.io SDK and accompanying CLI were written with intention that developers can add and enhance functionality into Browserless for your needs. This way you can get results into a database, third-party uploads, work within your e"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 150,
+          "text": "// A boolean to indicate if authorization (token auth) is required to access this route. Can also be a function"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 210,
+          "text": "// This route requires a valid authorization token."
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 249,
+          "text": "- `getTokenFromRequest(req)` Gets the token from the request, whether it be a token parameter Basic/Bearer Authorization header. Token query-parameter is checked first."
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 544,
+          "text": "- Internally, when Authorization is sent via the `token` query-parameter, browserless now migrates it to a more secure `Authorization` header before processing the request. This prevents accidental logging in source as well as SDK projects."
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 1616,
+          "text": "- Consolidates authorization checks to remove duplication."
+        },
+        {
+          "file": "src/http.ts",
+          "line": 16,
+          "text": "description: `The request is missing, or contains bad, authorization credentials.`,"
+        },
+        {
+          "file": "src/http.ts",
+          "line": 195,
+          "text": "* The authorization token"
+        },
+        {
+          "file": "src/shared/json-list.http.ts",
+          "line": 27,
+          "text": "properly, excluding any API tokens in that URL. If under authentication be sure to include your authorization."
+        },
+        {
+          "file": "src/shim.spec.ts",
+          "line": 210,
+          "text": "it('converts token query parameters to an authorization header', () => {"
+        },
+        {
+          "file": "src/shim.spec.ts",
+          "line": 226,
+          "text": "expect(request.headers.authorization).to.eql('Bearer 12345');"
+        },
+        {
+          "file": "src/shim.spec.ts",
+          "line": 229,
+          "text": "it('does no conversion if an authorization header is already present', () => {"
+        }
+      ]
+    },
+    {
+      "id": "billing",
+      "label": "Existing billing/credit accounting detected",
+      "present": true,
+      "weight": 12,
+      "evidence": [
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 279,
+          "text": "The easiest module to extend is the Configuration module, as it's usage is pretty simple and straightforward. Here, we're going to add another property that we'll use later in a route. Doing this makes properties available in all routes, an"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 1375,
+          "text": "- Adds back in `--disable-dev-shm-usage` to default arguments for better SHM performance."
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 1521,
+          "text": "- Removal of unnecessary '--disable-dev-shm-usage'"
+        },
+        {
+          "file": "LEARN_MORE.md",
+          "line": 114,
+          "text": "## Usage with other libraries"
+        },
+        {
+          "file": "MIGRATION-2.0.md",
+          "line": 215,
+          "text": "`rotate` has been removed due to lack of usage and included 3rd party dependencies. `safeMode` has also been removed in favor of using puppeteer's streaming capabilities that are much less error-prone."
+        },
+        {
+          "file": "MIGRATION-2.0.md",
+          "line": 219,
+          "text": "The /screenshot API operates very similarly to how it did in browserless 1.xx. A few properties and options have been removed due to their infrequent usage and 3rd party dependencies."
+        },
+        {
+          "file": "MIGRATION-2.0.md",
+          "line": 227,
+          "text": "The /scrape API operates similarly to how it did in browserless 1.xx. A few properties and options have been removed due to their infrequent usage and 3rd party dependencies."
+        },
+        {
+          "file": "bin/browserless.js",
+          "line": 428,
+          "text": "Usage: npx @browserless.io/browserless start"
+        },
+        {
+          "file": "bin/browserless.js",
+          "line": 438,
+          "text": "Usage: npx @browserless.io/browserless clean"
+        },
+        {
+          "file": "bin/browserless.js",
+          "line": 447,
+          "text": "Usage: npx @browserless.io/browserless dev"
+        },
+        {
+          "file": "bin/browserless.js",
+          "line": 457,
+          "text": "Usage: npx @browserless.io/browserless build"
+        },
+        {
+          "file": "bin/browserless.js",
+          "line": 467,
+          "text": "Usage: npx @browserless.io/browserless install-browsers"
+        }
+      ]
+    },
+    {
+      "id": "rate_limits",
+      "label": "Existing rate-limit/concurrency controls detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "bin/scaffold/src/hello-world.http.ts",
+          "line": 19,
+          "text": "concurrency = false;"
+        },
+        {
+          "file": "README.md",
+          "line": 137,
+          "text": "- **Parallelism and queueing** — Handle multiple sessions with configurable concurrency limits"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 73,
+          "text": "- `limiter.ts` Loads the default export here as a limiter override (concurrency)."
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 157,
+          "text": "// Does this route need to be limited by the global concurrency limit? Set to \"true\" if so"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 158,
+          "text": "concurrency = false;"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 216,
+          "text": "// This route is limited by the global concurrency limiter"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 217,
+          "text": "concurrency = true;"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 326,
+          "text": "// Generally, we recommend limiting concurrency when using"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 328,
+          "text": "concurrency = true;"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 219,
+          "text": "- Fix: fire `after()` hook for routes with `concurrency=false`."
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 499,
+          "text": "- Adds a new `/function/connect` route to distinguish function API calls and not have them add to concurrency."
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 521,
+          "text": "- Updated messaging around concurrency limits being reached."
+        }
+      ]
+    },
+    {
+      "id": "x402_deps",
+      "label": "x402 dependency or source references detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "active_payment_middleware",
+      "label": "Active x402 payment middleware detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "commented_payment_middleware",
+      "label": "Commented x402 payment middleware detected",
+      "present": false,
+      "weight": 5,
+      "evidence": []
+    },
+    {
+      "id": "circle_terms",
+      "label": "Circle Agent Wallet/Gateway/Marketplace language detected",
+      "present": false,
+      "weight": 10,
+      "evidence": []
+    },
+    {
+      "id": "schemas",
+      "label": "Machine-readable schemas or OpenAPI-like metadata detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "bin/scaffold/src/hello-world.http.ts",
+          "line": 12,
+          "text": "export type ResponseSchema = string;"
+        },
+        {
+          "file": "bin/scaffold/src/hello-world.http.ts",
+          "line": 27,
+          "text": "const response: ResponseSchema = 'Hello World!';"
+        },
+        {
+          "file": "bin/scaffold/package.json",
+          "line": 26,
+          "text": "\"typescript-json-schema\": \"^0.67.2\""
+        },
+        {
+          "file": "package.json",
+          "line": 21,
+          "text": "\"build\": \"npm run clean && npm run build:ts && npm run install:adblock && npm run build:schemas && npm run build:devtools && npm run build:openapi\","
+        },
+        {
+          "file": "package.json",
+          "line": 25,
+          "text": "\"build:schemas\": \"node scripts/build-schemas.js\","
+        },
+        {
+          "file": "package.json",
+          "line": 26,
+          "text": "\"build:openapi\": \"node scripts/build-open-api.js\","
+        },
+        {
+          "file": "package.json",
+          "line": 106,
+          "text": "\"typescript-json-schema\": \"^0.67.3\""
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 137,
+          "text": "// Response schemas must be typed \"ResponseSchema\" and are documented for you and"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 139,
+          "text": "export type ResponseSchema = string;"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 179,
+          "text": "const response: ResponseSchema = 'Hello World!';"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 180,
+          "text": "return writeResponse(res, 200, ResponseSchema, contentTypes.text);"
+        },
+        {
+          "file": "bin/scaffold/README.md",
+          "line": 200,
+          "text": "// Use \"QuerySchema\" here to define what query-parameters are allowed"
+        }
+      ]
+    },
+    {
+      "id": "receipts",
+      "label": "Payment receipt or fulfillment proof language detected",
+      "present": false,
+      "weight": 8,
+      "evidence": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "title": "Circle Agent Marketplace readiness is not documented",
+      "detail": "The scan did not find Circle Agent Wallet, Circle Gateway, USDC, or Marketplace-oriented language.",
+      "evidence": [],
+      "recommendation": "Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay."
+    },
+    {
+      "severity": "low",
+      "title": "Receipt and proof-of-work trail is weak",
+      "detail": "Agent users need to understand what was paid for and what was delivered.",
+      "evidence": [],
+      "recommendation": "Return a receipt object with paid resource, amount, network, request hash, result hash, and provider job id."
+    }
+  ],
+  "issueDraft": {
+    "title": "Add Circle Agent Wallet / x402 paid access for AI agents",
+    "body": "## Proposal: add Circle Agent Wallet / x402 paid access for AI agents\n\nThis project looks like a strong candidate for agent-native paid access. I ran a static readiness scan focused on x402 and Circle Agent Marketplace compatibility.\n\n\n### Readiness summary\n\n- Score: 38/100\n- Estimated effort: high\n- Verdict: Early candidate: likely needs a new paid route, schemas, and billing/payment plumbing.\n\n### Why this is useful\n\nAI agents often need one-off access to API results without creating a dashboard account, sharing a long-lived API key, or preloading credits. A Circle/x402 path would let an agent:\n\n1. Discover a paid endpoint.\n2. Inspect pricing and request schema.\n3. Pay in USDC from a Circle Agent Wallet.\n4. Receive the API response plus a receipt/proof object.\n\n### Candidate endpoints\n\n- No route examples were detected by the scanner.\n\n### Main integration gaps\n\n- **Circle Agent Marketplace readiness is not documented**: Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay.\n- **Receipt and proof-of-work trail is weak**: Return a receipt object with paid resource, amount, network, request hash, result hash, and provider job id.\n\n### Suggested first implementation\n\nStart with a narrow paid route rather than changing the whole billing model:\n\n```\nPOST /x402/search or POST /x402/scrape\n  -> return 402 payment challenge when no valid payment is supplied\n  -> verify x402 payment on Base/USDC\n  -> run the existing internal search/scrape pipeline\n  -> bypass subscription credit billing for this one paid call\n  -> return { data, receipt: { amount, network, resource, requestHash, resultHash, jobId } }\n```\n\nFor Circle Agent Marketplace readiness, publish:\n\n- method + URL\n- USDC price\n- supported network\n- input JSON schema\n- response JSON schema\n- receipt shape\n- timeout and retry guidance\n\n### Notes\n\nThis issue is intentionally scoped as an additive path. Existing API keys, subscriptions, and dashboards can remain unchanged while agents get a pay-per-call option."
+  }
+}

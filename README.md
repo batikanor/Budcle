@@ -30,6 +30,12 @@ npm run analyze:firecrawl
 
 Generated reports live in `circle-readiness-agent/reports/`.
 
+Real upstream usage:
+
+- Firecrawl: https://github.com/firecrawl/firecrawl/issues/3279#issuecomment-4758055563
+- Crawl4AI: https://github.com/unclecode/crawl4ai/issues/2024
+- Browserless: https://github.com/browserless/browserless/issues/5458
+
 ## Submission Demo
 
 `submission-site/` is a static Vercel-ready report viewer for the jury and video demo. `SUBMISSION.md` contains the 3 minute pitch plan, live demo flow, and submission checklist.

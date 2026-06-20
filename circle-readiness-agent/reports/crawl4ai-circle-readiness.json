@@ -1,0 +1,355 @@
+{
+  "input": {
+    "repoPath": "/Users/batikanorpava/Documents/other_development/2026-06-berlin-blockchain-agentic-ai/budcle/.ignored-upstream/crawl4ai",
+    "name": "Crawl4AI",
+    "url": "https://github.com/unclecode/crawl4ai"
+  },
+  "analyzedAt": "2026-06-20T13:12:38.390Z",
+  "summary": {
+    "score": 46,
+    "verdict": "Good candidate: meaningful primitives exist, but integration gaps remain.",
+    "estimatedEffort": "medium"
+  },
+  "filesScanned": 698,
+  "endpoints": [],
+  "signals": [
+    {
+      "id": "api_routes",
+      "label": "HTTP API routes detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "auth",
+      "label": "Existing auth/API-key middleware detected",
+      "present": true,
+      "weight": 10,
+      "evidence": [
+        {
+          "file": "README.md",
+          "line": 501,
+          "text": "llm_config = LLMConfig(provider=\"openai/gpt-4o\", api_token=os.getenv('OPENAI_API_KEY')),"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 80,
+          "text": "OPENAI_API_KEY=sk-your-key"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 83,
+          "text": "ANTHROPIC_API_KEY=your-anthropic-key"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 86,
+          "text": "# DEEPSEEK_API_KEY=your-deepseek-key"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 87,
+          "text": "# GROQ_API_KEY=your-groq-key"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 88,
+          "text": "# TOGETHER_API_KEY=your-together-key"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 89,
+          "text": "# MISTRAL_API_KEY=your-mistral-key"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 582,
+          "text": "# headers={\"Authorization\": f\"Bearer {token}\"},  # If JWT is enabled"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 619,
+          "text": "#    headers = {\"Authorization\": f\"Bearer {token}\"} # If JWT is enabled"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 882,
+          "text": "# api_key: sk-...  # If you pass the API key directly (not recommended)"
+        },
+        {
+          "file": "docs/apps/linkdin/README.md",
+          "line": 78,
+          "text": "--llm-api-key \"\" \\"
+        },
+        {
+          "file": "docs/examples/adaptive_crawling/README.md",
+          "line": 79,
+          "text": "- For embedding strategy with OpenAI: Set `OPENAI_API_KEY` environment variable"
+        }
+      ]
+    },
+    {
+      "id": "billing",
+      "label": "Existing billing/credit accounting detected",
+      "present": true,
+      "weight": 12,
+      "evidence": [
+        {
+          "file": ".github/workflows/docs/README.md",
+          "line": 10,
+          "text": "4. [Usage Guide](#usage-guide)"
+        },
+        {
+          "file": ".github/workflows/docs/README.md",
+          "line": 301,
+          "text": "## Usage Guide"
+        },
+        {
+          "file": ".github/workflows/docs/README.md",
+          "line": 829,
+          "text": "uses: actions/checkout@v4"
+        },
+        {
+          "file": ".github/workflows/docs/README.md",
+          "line": 832,
+          "text": "uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1"
+        },
+        {
+          "file": "README.md",
+          "line": 224,
+          "text": "- 📖 **Clear Documentation**: Simplified and updated guides for onboarding and advanced usage."
+        },
+        {
+          "file": "README.md",
+          "line": 364,
+          "text": "## 🔬 Advanced Usage Examples 🔬"
+        },
+        {
+          "file": "README.md",
+          "line": 565,
+          "text": "> **💡 Tip:** Some websites may use **CAPTCHA** based verification mechanisms to prevent automated access. If your workflow encounters such challenges, you may optionally integrate a third-party CAPTCHA-handling service such as <strong>[Cap"
+        },
+        {
+          "file": "README.md",
+          "line": 918,
+          "text": "- **🧠 Memory Monitoring**: Track and optimize memory usage during crawling:"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 657,
+          "text": "- **Better Resource Usage** - Free up client connections while jobs run in the background"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 1029,
+          "text": "Remember, the examples in the `examples` folder are your friends - they show real-world usage patterns that you can adapt for your needs."
+        },
+        {
+          "file": "docs/examples/adaptive_crawling/README.md",
+          "line": 7,
+          "text": "### 1. `basic_usage.py`"
+        },
+        {
+          "file": "docs/examples/adaptive_crawling/README.md",
+          "line": 46,
+          "text": "python basic_usage.py"
+        }
+      ]
+    },
+    {
+      "id": "rate_limits",
+      "label": "Existing rate-limit/concurrency controls detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "README.md",
+          "line": 700,
+          "text": "- Configurable rate limiter backoff with new `LLMConfig` parameters (#1269):"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 892,
+          "text": "# Rate Limiting Configuration"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 985,
+          "text": "- Set up proper rate limiting to protect your server"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 991,
+          "text": "- Use Redis for rate limiting in multi-container setups"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 999,
+          "text": "- Start with conservative rate limiter delays"
+        },
+        {
+          "file": "docs/apps/linkdin/README.md",
+          "line": 49,
+          "text": "--concurrency 2 \\"
+        },
+        {
+          "file": "docs/apps/linkdin/README.md",
+          "line": 123,
+          "text": "| 429 Too Many Requests | Lower `--concurrency`, rotate profile, add delay |"
+        },
+        {
+          "file": "tests/memory/README.md",
+          "line": 3,
+          "text": "This directory contains tools for stress testing Crawl4AI's `arun_many` method and dispatcher system with high volumes of URLs to evaluate performance, concurrency handling, and potentially detect memory issues. It also includes a benchmark"
+        },
+        {
+          "file": "tests/memory/README.md",
+          "line": 20,
+          "text": "3.  Running Crawl4AI's `arun_many` method against this local site using the `MemoryAdaptiveDispatcher` with configurable concurrency (`max_sessions`)."
+        },
+        {
+          "file": "tests/memory/README.md",
+          "line": 76,
+          "text": "| `--use-rate-limiter` | False           | Enable basic rate limiter in the dispatcher                                 |"
+        },
+        {
+          "file": "tests/memory/README.md",
+          "line": 109,
+          "text": "# Enable streaming mode and use rate limiting"
+        },
+        {
+          "file": "tests/memory/README.md",
+          "line": 125,
+          "text": "| `--use-rate-limiter` | False      | Enable a basic `RateLimiter` within the dispatcher                   |"
+        }
+      ]
+    },
+    {
+      "id": "x402_deps",
+      "label": "x402 dependency or source references detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "active_payment_middleware",
+      "label": "Active x402 payment middleware detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "commented_payment_middleware",
+      "label": "Commented x402 payment middleware detected",
+      "present": false,
+      "weight": 5,
+      "evidence": []
+    },
+    {
+      "id": "circle_terms",
+      "label": "Circle Agent Wallet/Gateway/Marketplace language detected",
+      "present": false,
+      "weight": 10,
+      "evidence": []
+    },
+    {
+      "id": "schemas",
+      "label": "Machine-readable schemas or OpenAPI-like metadata detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "README.md",
+          "line": 169,
+          "text": "- 🔎 **CSS-Based Extraction**: Fast schema-based data extraction using XPath and CSS selectors."
+        },
+        {
+          "file": "README.md",
+          "line": 170,
+          "text": "- 🔧 **Schema Definition**: Define custom schemas for extracting structured JSON from repetitive patterns."
+        },
+        {
+          "file": "README.md",
+          "line": 416,
+          "text": "schema = {"
+        },
+        {
+          "file": "README.md",
+          "line": 449,
+          "text": "extraction_strategy = JsonCssExtractionStrategy(schema, verbose=True)"
+        },
+        {
+          "file": "README.md",
+          "line": 502,
+          "text": "schema=OpenAIModelFee.schema(),"
+        },
+        {
+          "file": "README.md",
+          "line": 503,
+          "text": "extraction_type=\"schema\","
+        },
+        {
+          "file": "README.md",
+          "line": 1079,
+          "text": "- [x] 4. Automated Schema Generator: Convert natural language to extraction schemas"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 13,
+          "text": "- [Understanding Request Schema](#understanding-request-schema)"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 28,
+          "text": "- [MCP Schemas](#mcp-schemas)"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 324,
+          "text": "### MCP Schemas"
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 326,
+          "text": "Access the MCP tool schemas at `http://localhost:11235/mcp/schema` for detailed information on each tool's parameters and capabilities."
+        },
+        {
+          "file": "deploy/docker/README.md",
+          "line": 340,
+          "text": "Crawls the URL and returns preprocessed HTML optimized for schema extraction."
+        }
+      ]
+    },
+    {
+      "id": "receipts",
+      "label": "Payment receipt or fulfillment proof language detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "docs/examples/docker_webhook_example.py",
+          "line": 92,
+          "text": "# Return 200 OK to acknowledge receipt"
+        },
+        {
+          "file": "docs/examples/docker_webhook_example.py",
+          "line": 150,
+          "text": "# Return 200 OK to acknowledge receipt"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "title": "Circle Agent Marketplace readiness is not documented",
+      "detail": "The scan did not find Circle Agent Wallet, Circle Gateway, USDC, or Marketplace-oriented language.",
+      "evidence": [],
+      "recommendation": "Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay."
+    }
+  ],
+  "issueDraft": {
+    "title": "Add Circle Agent Wallet / x402 paid access for AI agents",
+    "body": "## Proposal: add Circle Agent Wallet / x402 paid access for AI agents\n\nThis project looks like a strong candidate for agent-native paid access. I ran a static readiness scan focused on x402 and Circle Agent Marketplace compatibility.\n\n\n### Readiness summary\n\n- Score: 46/100\n- Estimated effort: medium\n- Verdict: Good candidate: meaningful primitives exist, but integration gaps remain.\n\n### Why this is useful\n\nAI agents often need one-off access to API results without creating a dashboard account, sharing a long-lived API key, or preloading credits. A Circle/x402 path would let an agent:\n\n1. Discover a paid endpoint.\n2. Inspect pricing and request schema.\n3. Pay in USDC from a Circle Agent Wallet.\n4. Receive the API response plus a receipt/proof object.\n\n### Candidate endpoints\n\n- No route examples were detected by the scanner.\n\n### Main integration gaps\n\n- **Circle Agent Marketplace readiness is not documented**: Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay.\n\n### Suggested first implementation\n\nStart with a narrow paid route rather than changing the whole billing model:\n\n```\nPOST /x402/search or POST /x402/scrape\n  -> return 402 payment challenge when no valid payment is supplied\n  -> verify x402 payment on Base/USDC\n  -> run the existing internal search/scrape pipeline\n  -> bypass subscription credit billing for this one paid call\n  -> return { data, receipt: { amount, network, resource, requestHash, resultHash, jobId } }\n```\n\nFor Circle Agent Marketplace readiness, publish:\n\n- method + URL\n- USDC price\n- supported network\n- input JSON schema\n- response JSON schema\n- receipt shape\n- timeout and retry guidance\n\n### Notes\n\nThis issue is intentionally scoped as an additive path. Existing API keys, subscriptions, and dashboards can remain unchanged while agents get a pay-per-call option."
+  }
+}
