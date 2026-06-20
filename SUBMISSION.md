@@ -11,7 +11,7 @@
 - Team members and contact details: fill from the team roster.
 - Project name: Budcle.
 - Code repo: https://github.com/batikanor/Budcle
-- Live deployment: https://submission-site-hnl6eoy38-batikanors-projects.vercel.app
+- Live deployment: https://submission-site-six.vercel.app
 - Video: 2-3 minute demo recording of the static viewer plus terminal scan.
 - Tracks/bounties: Circle Agentic Commerce Track, Agentic Commerce payments/x402/automation, and any Circle-specific bounty that rewards x402 or Agent Wallet enablement.
 
@@ -44,7 +44,7 @@ Official context to reference:
 
 Use two browser/terminal windows:
 
-1. Open the Vercel report viewer: https://submission-site-hnl6eoy38-batikanors-projects.vercel.app
+1. Open the Vercel report viewer: https://submission-site-six.vercel.app
 2. Show the issue dashboard: Firecrawl, Crawl4AI, Browserless, and LibreTranslate.
 3. Explain that LibreTranslate proves Budcle is not only for crawling; it works for any metered API.
 4. Use the live x402-style probe buttons to show `402 Payment Required` first, then the demo receipt shape. Say clearly that it is a non-settling demo probe.
