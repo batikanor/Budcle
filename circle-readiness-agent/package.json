@@ -1,0 +1,19 @@
+{
+  "name": "circle-readiness-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evaluate open-source API repositories for x402 and Circle Agent Marketplace readiness, then draft maintainer-ready adoption issues.",
+  "type": "module",
+  "bin": {
+    "circle-readiness-agent": "./dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "analyze:firecrawl": "node dist/src/cli.js --repo ../.ignored-upstream/firecrawl --name Firecrawl --url https://github.com/firecrawl/firecrawl --issue-url https://github.com/firecrawl/firecrawl/issues/3279 --out reports/firecrawl-circle-readiness.md --json-out reports/firecrawl-circle-readiness.json"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  }
+}

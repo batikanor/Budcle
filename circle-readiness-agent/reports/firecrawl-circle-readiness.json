@@ -1,0 +1,1387 @@
+{
+  "input": {
+    "repoPath": "/Users/batikanorpava/Documents/other_development/2026-06-berlin-blockchain-agentic-ai/budcle/.ignored-upstream/firecrawl",
+    "name": "Firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "existingIssueUrl": "https://github.com/firecrawl/firecrawl/issues/3279"
+  },
+  "analyzedAt": "2026-06-20T12:25:27.554Z",
+  "summary": {
+    "score": 88,
+    "verdict": "Strong candidate: useful primitives exist, but production Circle readiness may still need endpoint coverage, docs, and receipts.",
+    "estimatedEffort": "medium"
+  },
+  "filesScanned": 1114,
+  "endpoints": [
+    {
+      "file": "apps/api/src/index.ts",
+      "line": 94,
+      "text": "app.get(\"/\", (_, res) => {",
+      "method": "GET",
+      "path": "/",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/index.ts",
+      "line": 101,
+      "text": "app.get(\"/e2e-test\", (_, res) => {",
+      "method": "GET",
+      "path": "/e2e-test",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/index.ts",
+      "line": 166,
+      "text": "app.get(\"/is-production\", (req, res) => {",
+      "method": "GET",
+      "path": "/is-production",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 27,
+      "text": "adminRouter.get(",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/redis-health",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 32,
+      "text": "adminRouter.get(",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/autumn-health",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 37,
+      "text": "adminRouter.post(",
+      "method": "POST",
+      "path": "/admin/${config.BULL_AUTH_KEY}/acuc-cache-clear",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 42,
+      "text": "adminRouter.get(",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/feng-check",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 47,
+      "text": "adminRouter.get(`/admin/${config.BULL_AUTH_KEY}/cclog`, wrap(cclogController));",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/cclog",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 49,
+      "text": "adminRouter.get(",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/index-queue-prometheus",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 54,
+      "text": "adminRouter.get(",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/precrawl",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 59,
+      "text": "adminRouter.get(",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/metrics",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 64,
+      "text": "adminRouter.get(",
+      "method": "GET",
+      "path": "/admin/${config.BULL_AUTH_KEY}/nuq-metrics",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 69,
+      "text": "adminRouter.post(",
+      "method": "POST",
+      "path": "/admin/${config.BULL_AUTH_KEY}/fsearch",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 74,
+      "text": "adminRouter.post(",
+      "method": "POST",
+      "path": "/admin/${config.BULL_AUTH_KEY}/concurrency-queue-backfill",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 79,
+      "text": "adminRouter.post(",
+      "method": "POST",
+      "path": "/admin/${config.BULL_AUTH_KEY}/crawl-monitor",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 86,
+      "text": "adminRouter.post(",
+      "method": "POST",
+      "path": "/admin/integration/create-user",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 91,
+      "text": "adminRouter.post(",
+      "method": "POST",
+      "path": "/admin/integration/validate-api-key",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/admin.ts",
+      "line": 96,
+      "text": "adminRouter.post(",
+      "method": "POST",
+      "path": "/admin/integration/rotate-api-key",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 14,
+      "text": "v0Router.post(",
+      "method": "POST",
+      "path": "/v0/scrape",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 19,
+      "text": "v0Router.post(\"/v0/crawl\", deprecationMiddleware(\"v0_crawl\"), crawlController);",
+      "method": "POST",
+      "path": "/v0/crawl",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 20,
+      "text": "v0Router.get(",
+      "method": "GET",
+      "path": "/v0/crawl/status/:jobId",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 25,
+      "text": "v0Router.delete(",
+      "method": "DELETE",
+      "path": "/v0/crawl/cancel/:jobId",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 32,
+      "text": "v0Router.get(\"/v0/keyAuth\", keyAuthController);",
+      "method": "GET",
+      "path": "/v0/keyAuth",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 35,
+      "text": "v0Router.post(",
+      "method": "POST",
+      "path": "/v0/search",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 42,
+      "text": "v0Router.get(\"/v0/health/liveness\", livenessController);",
+      "method": "GET",
+      "path": "/v0/health/liveness",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v0.ts",
+      "line": 43,
+      "text": "v0Router.get(\"/v0/health/readiness\", readinessController);",
+      "method": "GET",
+      "path": "/v0/health/readiness",
+      "nearbyMiddleware": []
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 125,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/scrape",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 134,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/crawl",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware",
+        "idempotencyMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 144,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/batch/scrape",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware",
+        "idempotencyMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 154,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/search",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 162,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/map",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 170,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/crawl/ongoing",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 177,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/crawl/active",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 183,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/crawl/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 190,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/batch/scrape/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 198,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/crawl/:jobId/errors",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 204,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/batch/scrape/:jobId/errors",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 210,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/scrape/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 216,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/concurrency-check",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 224,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/extract",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 233,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/extract/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 240,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/llmstxt",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 249,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/llmstxt/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 256,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/deep-research",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 265,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/deep-research/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 274,
+      "text": "v1Router.delete(",
+      "method": "DELETE",
+      "path": "/crawl/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 280,
+      "text": "v1Router.delete(",
+      "method": "DELETE",
+      "path": "/batch/scrape/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 297,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/fireclaw",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 304,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/team/credit-usage",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 310,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/team/credit-usage/historical",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 316,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/team/token-usage",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 322,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/team/token-usage/historical",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 328,
+      "text": "v1Router.get(",
+      "method": "GET",
+      "path": "/team/queue-status",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v1.ts",
+      "line": 336,
+      "text": "v1Router.post(",
+      "method": "POST",
+      "path": "/x402/search",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "paymentMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 238,
+      "text": "v2Router.get(\"/keyless/eligibility\", wrap(keylessEligibilityController));",
+      "method": "GET",
+      "path": "/keyless/eligibility",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 240,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/search",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 249,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/search/:jobId/feedback",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 256,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/feedback",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 262,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/parse",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 272,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/scrape",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 281,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/scrape/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 288,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/scrape/:jobId/interact",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 295,
+      "text": "v2Router.delete(",
+      "method": "DELETE",
+      "path": "/scrape/:jobId/interact",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 302,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/batch/scrape",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 311,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/map",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 319,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/crawl",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware",
+        "idempotencyMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 329,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/crawl/params-preview",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "checkCreditsMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 336,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/crawl/ongoing",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 342,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/crawl/active",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 348,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/crawl/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 355,
+      "text": "v2Router.delete(",
+      "method": "DELETE",
+      "path": "/crawl/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 374,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/batch/scrape/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 381,
+      "text": "v2Router.delete(",
+      "method": "DELETE",
+      "path": "/batch/scrape/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 388,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/batch/scrape/:jobId/errors",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 394,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/crawl/:jobId/errors",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 401,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/extract",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 411,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/extract/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 419,
+      "text": "v2Router.post(",
+      "method": "POST",
+      "path": "/agent",
+      "nearbyMiddleware": [
+        "authMiddleware",
+        "countryCheck",
+        "checkCreditsMiddleware",
+        "blocklistMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 428,
+      "text": "v2Router.get(",
+      "method": "GET",
+      "path": "/agent/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    },
+    {
+      "file": "apps/api/src/routes/v2.ts",
+      "line": 435,
+      "text": "v2Router.delete(",
+      "method": "DELETE",
+      "path": "/agent/:jobId",
+      "nearbyMiddleware": [
+        "authMiddleware"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "id": "api_routes",
+      "label": "HTTP API routes detected",
+      "present": true,
+      "weight": 15,
+      "evidence": [
+        {
+          "file": "apps/api/src/index.ts",
+          "line": 94,
+          "text": "app.get(\"/\", (_, res) => {",
+          "method": "GET",
+          "path": "/",
+          "nearbyMiddleware": []
+        },
+        {
+          "file": "apps/api/src/index.ts",
+          "line": 101,
+          "text": "app.get(\"/e2e-test\", (_, res) => {",
+          "method": "GET",
+          "path": "/e2e-test",
+          "nearbyMiddleware": []
+        },
+        {
+          "file": "apps/api/src/index.ts",
+          "line": 166,
+          "text": "app.get(\"/is-production\", (req, res) => {",
+          "method": "GET",
+          "path": "/is-production",
+          "nearbyMiddleware": []
+        },
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 27,
+          "text": "adminRouter.get(",
+          "method": "GET",
+          "path": "/admin/${config.BULL_AUTH_KEY}/redis-health",
+          "nearbyMiddleware": []
+        },
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 32,
+          "text": "adminRouter.get(",
+          "method": "GET",
+          "path": "/admin/${config.BULL_AUTH_KEY}/autumn-health",
+          "nearbyMiddleware": []
+        },
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 37,
+          "text": "adminRouter.post(",
+          "method": "POST",
+          "path": "/admin/${config.BULL_AUTH_KEY}/acuc-cache-clear",
+          "nearbyMiddleware": []
+        },
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 42,
+          "text": "adminRouter.get(",
+          "method": "GET",
+          "path": "/admin/${config.BULL_AUTH_KEY}/feng-check",
+          "nearbyMiddleware": []
+        },
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 47,
+          "text": "adminRouter.get(`/admin/${config.BULL_AUTH_KEY}/cclog`, wrap(cclogController));",
+          "method": "GET",
+          "path": "/admin/${config.BULL_AUTH_KEY}/cclog",
+          "nearbyMiddleware": []
+        }
+      ]
+    },
+    {
+      "id": "auth",
+      "label": "Existing auth/API-key middleware detected",
+      "present": true,
+      "weight": 10,
+      "evidence": [
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 5,
+          "text": "import { authMiddleware, checkCreditsMiddleware, wrap } from \"./shared\";"
+        },
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 81,
+          "text": "authMiddleware(RateLimiterMode.Crawl),"
+        },
+        {
+          "file": "apps/api/src/routes/shared.ts",
+          "line": 197,
+          "text": "export function authMiddleware("
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 31,
+          "text": "authMiddleware,"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 127,
+          "text": "authMiddleware(RateLimiterMode.Scrape, { allowKeyless: true }),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 136,
+          "text": "authMiddleware(RateLimiterMode.Crawl),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 146,
+          "text": "authMiddleware(RateLimiterMode.Scrape),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 156,
+          "text": "authMiddleware(RateLimiterMode.Search, { allowKeyless: true }),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 164,
+          "text": "authMiddleware(RateLimiterMode.Map),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 172,
+          "text": "authMiddleware(RateLimiterMode.CrawlStatus),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 179,
+          "text": "authMiddleware(RateLimiterMode.CrawlStatus),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 185,
+          "text": "authMiddleware(RateLimiterMode.CrawlStatus),"
+        }
+      ]
+    },
+    {
+      "id": "billing",
+      "label": "Existing billing/credit accounting detected",
+      "present": true,
+      "weight": 12,
+      "evidence": [
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 55,
+          "text": "KEYLESS_CREDITS_PER_DAY: z.coerce.number().int().nonnegative().optional(),"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 74,
+          "text": "STRIPE_SECRET_KEY: z.string().optional(),"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 83,
+          "text": "SEARCH_FEEDBACK_DAILY_CAP_CREDITS: z.coerce"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 89,
+          "text": "FEEDBACK_DAILY_CAP_CREDITS: z.coerce.number().int().nonnegative().default(50),"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 304,
+          "text": "// Billing"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 12,
+          "text": "KEYLESS_CREDITS_MESSAGE,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 25,
+          "text": "authCreditUsageChunk,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 26,
+          "text": "authCreditUsageChunkFromTeam,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 27,
+          "text": "AuthCreditUsageChunkRow,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 30,
+          "text": "import { AuthCreditUsageChunk, AuthCreditUsageChunkFromTeam } from \"./v1/types\";"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 41,
+          "text": "| AuthCreditUsageChunk"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 43,
+          "text": "| ((acuc: AuthCreditUsageChunk) => AuthCreditUsageChunk | null),"
+        }
+      ]
+    },
+    {
+      "id": "rate_limits",
+      "label": "Existing rate-limit/concurrency controls detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 269,
+          "text": "// Rate Limiting"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 2,
+          "text": "import { RateLimiterRedis } from \"rate-limiter-flexible\";"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 10,
+          "text": "import { getRateLimiter } from \"../services/rate-limiter\";"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 29,
+          "text": "import { AuthResponse, RateLimiterMode } from \"../types\";"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 110,
+          "text": "concurrency: is_extract ? 200 : 2,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 150,
+          "text": "concurrency: 99999999,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 249,
+          "text": "mode?: RateLimiterMode,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 252,
+          "text": "mode === RateLimiterMode.Extract ||"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 253,
+          "text": "mode === RateLimiterMode.ExtractStatus ||"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 254,
+          "text": "mode === RateLimiterMode.ExtractAgentPreview;"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 369,
+          "text": "mode?: RateLimiterMode,"
+        },
+        {
+          "file": "apps/api/src/controllers/auth.ts",
+          "line": 372,
+          "text": "mode === RateLimiterMode.Extract ||"
+        }
+      ]
+    },
+    {
+      "id": "x402_deps",
+      "label": "x402 dependency or source references detected",
+      "present": true,
+      "weight": 15,
+      "evidence": [
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 285,
+          "text": "// Payment (x402)"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 286,
+          "text": "X402_ENDPOINT_PRICE_USD: z.string().optional(),"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 287,
+          "text": "X402_NETWORK: z.string().optional(),"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 288,
+          "text": "X402_PAY_TO_ADDRESS: ethereumAddress,"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 289,
+          "text": "X402_FACILITATOR_URL: z.string().url().optional(),"
+        },
+        {
+          "file": "apps/api/src/controllers/v1/x402-search.ts",
+          "line": 69,
+          "text": "logger.info(\"Adding scrape job [x402]\", {"
+        },
+        {
+          "file": "apps/api/src/controllers/v1/x402-search.ts",
+          "line": 120,
+          "text": "logger.info(\"Scrape job [x402] completed\", {"
+        },
+        {
+          "file": "apps/api/src/controllers/v1/x402-search.ts",
+          "line": 154,
+          "text": "logger.error(`Error in scrapeSearchResult [x402]: ${error}`, {"
+        },
+        {
+          "file": "apps/api/src/controllers/v1/x402-search.ts",
+          "line": 193,
+          "text": "module: \"x402-search\","
+        },
+        {
+          "file": "apps/api/src/controllers/v1/x402-search.ts",
+          "line": 240,
+          "text": "logger.info(\"Searching [x402] for results\");"
+        },
+        {
+          "file": "apps/api/src/controllers/v1/x402-search.ts",
+          "line": 264,
+          "text": "logger.info(\"Searching [x402] completed\", {"
+        },
+        {
+          "file": "apps/api/src/controllers/v1/x402-search.ts",
+          "line": 274,
+          "text": "logger.info(\"No search [x402] results found\");"
+        }
+      ]
+    },
+    {
+      "id": "active_payment_middleware",
+      "label": "Active x402 payment middleware detected",
+      "present": true,
+      "weight": 15,
+      "evidence": [
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 340,
+          "text": "paymentMiddleware("
+        },
+        {
+          "file": "apps/api/src/routes/v2.ts",
+          "line": 613,
+          "text": "paymentMiddleware("
+        }
+      ]
+    },
+    {
+      "id": "commented_payment_middleware",
+      "label": "Commented x402 payment middleware detected",
+      "present": true,
+      "weight": 5,
+      "evidence": [
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 63,
+          "text": "//   paymentMiddleware("
+        },
+        {
+          "file": "apps/api/src/routes/v2.ts",
+          "line": 125,
+          "text": "//   paymentMiddleware("
+        }
+      ]
+    },
+    {
+      "id": "circle_terms",
+      "label": "Circle Agent Wallet/Gateway/Marketplace language detected",
+      "present": false,
+      "weight": 10,
+      "evidence": []
+    },
+    {
+      "id": "schemas",
+      "label": "Machine-readable schemas or OpenAPI-like metadata detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "apps/api/native/src/crawler.rs",
+          "line": 759,
+          "text": "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+        },
+        {
+          "file": "apps/api/native/src/crawler.rs",
+          "line": 779,
+          "text": "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+        },
+        {
+          "file": "apps/api/native/src/crawler.rs",
+          "line": 805,
+          "text": "<invalid xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+        },
+        {
+          "file": "apps/api/native/src/crawler.rs",
+          "line": 819,
+          "text": "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+        },
+        {
+          "file": "apps/api/native/src/crawler.rs",
+          "line": 832,
+          "text": "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+        },
+        {
+          "file": "apps/api/native/src/crawler.rs",
+          "line": 870,
+          "text": "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 12,
+          "text": "const emptyStringAsUndefined = <T extends z.ZodTypeAny>(schema: T) =>"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 13,
+          "text": "z.preprocess(value => (value === \"\" ? undefined : value), schema.optional());"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 15,
+          "text": "const emptyStringAsDefault = <T extends z.ZodTypeAny>(schema: T) =>"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 16,
+          "text": "z.preprocess(value => (value === \"\" ? undefined : value), schema);"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 18,
+          "text": "// Ethereum address schema: validates 0x followed by 40 hex characters"
+        },
+        {
+          "file": "apps/api/src/config.ts",
+          "line": 33,
+          "text": "/* Schema */"
+        }
+      ]
+    },
+    {
+      "id": "receipts",
+      "label": "Payment receipt or fulfillment proof language detected",
+      "present": false,
+      "weight": 8,
+      "evidence": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "title": "Existing API-key auth can be complemented by x402 payment-auth",
+      "detail": "The project already has authenticated API routes. x402 can add a parallel no-account path for agents without replacing the existing subscription model.",
+      "evidence": [
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 5,
+          "text": "import { authMiddleware, checkCreditsMiddleware, wrap } from \"./shared\";"
+        },
+        {
+          "file": "apps/api/src/routes/admin.ts",
+          "line": 81,
+          "text": "authMiddleware(RateLimiterMode.Crawl),"
+        },
+        {
+          "file": "apps/api/src/routes/shared.ts",
+          "line": 197,
+          "text": "export function authMiddleware("
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 31,
+          "text": "authMiddleware,"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 127,
+          "text": "authMiddleware(RateLimiterMode.Scrape, { allowKeyless: true }),"
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 136,
+          "text": "authMiddleware(RateLimiterMode.Crawl),"
+        }
+      ],
+      "recommendation": "Add a separate `/x402/*` route or conditional payment middleware branch that maps paid requests into the same internal job pipeline with bypassed credit billing."
+    },
+    {
+      "severity": "medium",
+      "title": "x402 coverage appears narrow relative to the core API surface",
+      "detail": "Active x402 middleware was detected, but paid endpoint coverage does not appear to include the primary scrape/crawl/extract APIs.",
+      "evidence": [
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 340,
+          "text": "paymentMiddleware("
+        },
+        {
+          "file": "apps/api/src/routes/v2.ts",
+          "line": 613,
+          "text": "paymentMiddleware("
+        },
+        {
+          "file": "apps/api/src/routes/v1.ts",
+          "line": 336,
+          "text": "v1Router.post(",
+          "method": "POST",
+          "path": "/x402/search",
+          "nearbyMiddleware": [
+            "authMiddleware",
+            "countryCheck",
+            "paymentMiddleware"
+          ]
+        }
+      ],
+      "recommendation": "Keep the existing paid search path, then add a Circle-ready `/x402/scrape` endpoint or a documented paid mode for the existing scrape route."
+    },
+    {
+      "severity": "medium",
+      "title": "Circle Agent Marketplace readiness is not documented",
+      "detail": "The scan did not find Circle Agent Wallet, Circle Gateway, USDC, or Marketplace-oriented language.",
+      "evidence": [],
+      "recommendation": "Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay."
+    },
+    {
+      "severity": "low",
+      "title": "Receipt and proof-of-work trail is weak",
+      "detail": "Agent users need to understand what was paid for and what was delivered.",
+      "evidence": [],
+      "recommendation": "Return a receipt object with paid resource, amount, network, request hash, result hash, and provider job id."
+    }
+  ],
+  "issueDraft": {
+    "title": "Add Circle Agent Wallet / x402 paid access for AI agents",
+    "body": "## Proposal: add Circle Agent Wallet / x402 paid access for AI agents\n\nThis project looks like a strong candidate for agent-native paid access. I ran a static readiness scan focused on x402 and Circle Agent Marketplace compatibility.\n\nRelated existing discussion: https://github.com/firecrawl/firecrawl/issues/3279\n\n### Readiness summary\n\n- Score: 88/100\n- Estimated effort: medium\n- Verdict: Strong candidate: useful primitives exist, but production Circle readiness may still need endpoint coverage, docs, and receipts.\n\n### Why this is useful\n\nAI agents often need one-off access to API results without creating a dashboard account, sharing a long-lived API key, or preloading credits. A Circle/x402 path would let an agent:\n\n1. Discover a paid endpoint.\n2. Inspect pricing and request schema.\n3. Pay in USDC from a Circle Agent Wallet.\n4. Receive the API response plus a receipt/proof object.\n\n### Candidate endpoints\n\n- `POST /x402/search` in `apps/api/src/routes/v1.ts:336`\n- `POST /scrape` in `apps/api/src/routes/v1.ts:125`\n- `POST /crawl` in `apps/api/src/routes/v1.ts:134`\n- `POST /batch/scrape` in `apps/api/src/routes/v1.ts:144`\n- `POST /search` in `apps/api/src/routes/v1.ts:154`\n- `GET /crawl/ongoing` in `apps/api/src/routes/v1.ts:170`\n- `GET /crawl/active` in `apps/api/src/routes/v1.ts:177`\n- `GET /crawl/:jobId` in `apps/api/src/routes/v1.ts:183`\n\n### Main integration gaps\n\n- **Existing API-key auth can be complemented by x402 payment-auth**: Add a separate `/x402/*` route or conditional payment middleware branch that maps paid requests into the same internal job pipeline with bypassed credit billing.\n- **x402 coverage appears narrow relative to the core API surface**: Keep the existing paid search path, then add a Circle-ready `/x402/scrape` endpoint or a documented paid mode for the existing scrape route.\n- **Circle Agent Marketplace readiness is not documented**: Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay.\n- **Receipt and proof-of-work trail is weak**: Return a receipt object with paid resource, amount, network, request hash, result hash, and provider job id.\n\n### Suggested first implementation\n\nStart with a narrow paid route rather than changing the whole billing model:\n\n```\nPOST /x402/search or POST /x402/scrape\n  -> return 402 payment challenge when no valid payment is supplied\n  -> verify x402 payment on Base/USDC\n  -> run the existing internal search/scrape pipeline\n  -> bypass subscription credit billing for this one paid call\n  -> return { data, receipt: { amount, network, resource, requestHash, resultHash, jobId } }\n```\n\nFor Circle Agent Marketplace readiness, publish:\n\n- method + URL\n- USDC price\n- supported network\n- input JSON schema\n- response JSON schema\n- receipt shape\n- timeout and retry guidance\n\n### Notes\n\nThis issue is intentionally scoped as an additive path. Existing API keys, subscriptions, and dashboards can remain unchanged while agents get a pay-per-call option."
+  }
+}
