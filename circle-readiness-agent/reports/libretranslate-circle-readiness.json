@@ -1,0 +1,281 @@
+{
+  "input": {
+    "repoPath": "/Users/batikanorpava/Documents/other_development/2026-06-berlin-blockchain-agentic-ai/budcle/.ignored-upstream/libretranslate",
+    "name": "LibreTranslate",
+    "url": "https://github.com/LibreTranslate/LibreTranslate"
+  },
+  "analyzedAt": "2026-06-20T13:21:15.181Z",
+  "summary": {
+    "score": 38,
+    "verdict": "Early candidate: likely needs a new paid route, schemas, and billing/payment plumbing.",
+    "estimatedEffort": "high"
+  },
+  "filesScanned": 118,
+  "endpoints": [],
+  "signals": [
+    {
+      "id": "api_routes",
+      "label": "HTTP API routes detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "auth",
+      "label": "Existing auth/API-key middleware detected",
+      "present": true,
+      "weight": 10,
+      "evidence": [
+        {
+          "file": "docker-compose.cuda.yml",
+          "line": 10,
+          "text": "- LT_API_KEYS_DB_PATH=/app/db/api_keys.db"
+        },
+        {
+          "file": "docker-compose.cuda.yml",
+          "line": 11,
+          "text": "- LT_API_KEYS=True"
+        },
+        {
+          "file": "docker-compose.yml",
+          "line": 19,
+          "text": "## Uncomment this section and the libretranslate_api_keys volume if you want to backup your API keys"
+        },
+        {
+          "file": "docker-compose.yml",
+          "line": 21,
+          "text": "#   - LT_API_KEYS=true"
+        },
+        {
+          "file": "docker-compose.yml",
+          "line": 22,
+          "text": "#   - LT_API_KEYS_DB_PATH=/app/db/api_keys.db # Same result as `db/api_keys.db` or `./db/api_keys.db`"
+        },
+        {
+          "file": "docker-compose.yml",
+          "line": 27,
+          "text": "#   - libretranslate_api_keys:/app/db"
+        },
+        {
+          "file": "docker-compose.yml",
+          "line": 32,
+          "text": "#   libretranslate_api_keys:"
+        },
+        {
+          "file": "k8s.yaml",
+          "line": 10,
+          "text": "ltapikey: \"yoursecretapikey\""
+        },
+        {
+          "file": "k8s.yaml",
+          "line": 44,
+          "text": "key: ltapikey"
+        },
+        {
+          "file": "libretranslate/api_keys.py",
+          "line": 10,
+          "text": "DEFAULT_DB_PATH = DEFARGS['API_KEYS_DB_PATH']"
+        },
+        {
+          "file": "libretranslate/api_keys.py",
+          "line": 16,
+          "text": "if os.path.isfile(\"api_keys.db\") and not os.path.isfile(\"db/api_keys.db\"):"
+        },
+        {
+          "file": "libretranslate/api_keys.py",
+          "line": 17,
+          "text": "print(\"Migrating {} to {}\".format(\"api_keys.db\", \"db/api_keys.db\"))"
+        }
+      ]
+    },
+    {
+      "id": "billing",
+      "label": "Existing billing/credit accounting detected",
+      "present": true,
+      "weight": 12,
+      "evidence": [
+        {
+          "file": "README.md",
+          "line": 14,
+          "text": "- [Usage Instructions](https://docs.libretranslate.com/guides/api_usage/)"
+        },
+        {
+          "file": "README.md",
+          "line": 17,
+          "text": "## Credits"
+        },
+        {
+          "file": "libretranslate/main.py",
+          "line": 237,
+          "text": "help=\"Enable the /metrics endpoint for exporting Prometheus usage metrics\","
+        },
+        {
+          "file": ".github/workflows/publish-docker.yml",
+          "line": 14,
+          "text": "- name: Checkout Repository"
+        },
+        {
+          "file": ".github/workflows/publish-docker.yml",
+          "line": 15,
+          "text": "uses: actions/checkout@v4"
+        },
+        {
+          "file": ".github/workflows/publish-package.yml",
+          "line": 21,
+          "text": "- uses: actions/checkout@v4"
+        },
+        {
+          "file": ".github/workflows/run-tests.yml",
+          "line": 25,
+          "text": "- uses: actions/checkout@v4"
+        },
+        {
+          "file": ".github/workflows/run-tests.yml",
+          "line": 45,
+          "text": "- uses: actions/checkout@v4"
+        },
+        {
+          "file": ".github/workflows/run-tests.yml",
+          "line": 55,
+          "text": "- uses: actions/checkout@v4"
+        }
+      ]
+    },
+    {
+      "id": "rate_limits",
+      "label": "Existing rate-limit/concurrency controls detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "libretranslate/main.py",
+          "line": 127,
+          "text": "help=\"Enable API keys database for per-user rate limits lookup\","
+        }
+      ]
+    },
+    {
+      "id": "x402_deps",
+      "label": "x402 dependency or source references detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "active_payment_middleware",
+      "label": "Active x402 payment middleware detected",
+      "present": false,
+      "weight": 15,
+      "evidence": []
+    },
+    {
+      "id": "commented_payment_middleware",
+      "label": "Commented x402 payment middleware detected",
+      "present": false,
+      "weight": 5,
+      "evidence": []
+    },
+    {
+      "id": "circle_terms",
+      "label": "Circle Agent Wallet/Gateway/Marketplace language detected",
+      "present": false,
+      "weight": 10,
+      "evidence": []
+    },
+    {
+      "id": "schemas",
+      "label": "Machine-readable schemas or OpenAPI-like metadata detected",
+      "present": true,
+      "weight": 8,
+      "evidence": [
+        {
+          "file": "libretranslate/api_keys.py",
+          "line": 40,
+          "text": "# Schema/upgrade checks"
+        },
+        {
+          "file": "libretranslate/api_keys.py",
+          "line": 41,
+          "text": "schema = self.c.execute(\"SELECT sql FROM sqlite_master WHERE type='table' AND name='api_keys';\").fetchone()[0]"
+        },
+        {
+          "file": "libretranslate/api_keys.py",
+          "line": 42,
+          "text": "if '\"char_limit\" INTEGER DEFAULT NULL' not in schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 516,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 551,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 586,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 596,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 603,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 610,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 622,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 630,
+          "text": "schema:"
+        },
+        {
+          "file": "libretranslate/app.py",
+          "line": 638,
+          "text": "schema:"
+        }
+      ]
+    },
+    {
+      "id": "receipts",
+      "label": "Payment receipt or fulfillment proof language detected",
+      "present": false,
+      "weight": 8,
+      "evidence": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "title": "Circle Agent Marketplace readiness is not documented",
+      "detail": "The scan did not find Circle Agent Wallet, Circle Gateway, USDC, or Marketplace-oriented language.",
+      "evidence": [],
+      "recommendation": "Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay."
+    },
+    {
+      "severity": "low",
+      "title": "Receipt and proof-of-work trail is weak",
+      "detail": "Agent users need to understand what was paid for and what was delivered.",
+      "evidence": [],
+      "recommendation": "Return a receipt object with paid resource, amount, network, request hash, result hash, and provider job id."
+    }
+  ],
+  "issueDraft": {
+    "title": "Add Circle Agent Wallet / x402 paid access for AI agents",
+    "body": "## Proposal: add Circle Agent Wallet / x402 paid access for AI agents\n\nThis project looks like a strong candidate for agent-native paid access. I ran a static readiness scan focused on x402 and Circle Agent Marketplace compatibility.\n\n\n### Readiness summary\n\n- Score: 38/100\n- Estimated effort: high\n- Verdict: Early candidate: likely needs a new paid route, schemas, and billing/payment plumbing.\n\n### Why this is useful\n\nAI agents often need one-off access to API results without creating a dashboard account, sharing a long-lived API key, or preloading credits. A Circle/x402 path would let an agent:\n\n1. Discover a paid endpoint.\n2. Inspect pricing and request schema.\n3. Pay in USDC from a Circle Agent Wallet.\n4. Receive the API response plus a receipt/proof object.\n\n### Candidate endpoints\n\n- No route examples were detected by the scanner.\n\n### Main integration gaps\n\n- **Circle Agent Marketplace readiness is not documented**: Add a maintainer-facing doc describing supported x402 networks, USDC settlement, input schema, pricing, response shape, and how Circle Agent Wallet users can pay.\n- **Receipt and proof-of-work trail is weak**: Return a receipt object with paid resource, amount, network, request hash, result hash, and provider job id.\n\n### Suggested first implementation\n\nStart with a narrow paid route rather than changing the whole billing model:\n\n```\nPOST /x402/search or POST /x402/scrape\n  -> return 402 payment challenge when no valid payment is supplied\n  -> verify x402 payment on Base/USDC\n  -> run the existing internal search/scrape pipeline\n  -> bypass subscription credit billing for this one paid call\n  -> return { data, receipt: { amount, network, resource, requestHash, resultHash, jobId } }\n```\n\nFor Circle Agent Marketplace readiness, publish:\n\n- method + URL\n- USDC price\n- supported network\n- input JSON schema\n- response JSON schema\n- receipt shape\n- timeout and retry guidance\n\n### Notes\n\nThis issue is intentionally scoped as an additive path. Existing API keys, subscriptions, and dashboards can remain unchanged while agents get a pay-per-call option."
+  }
+}

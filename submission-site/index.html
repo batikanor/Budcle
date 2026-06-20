@@ -483,6 +483,50 @@
         gap: 9px;
       }
 
+      .issue-dashboard {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .issue-link {
+        position: relative;
+        min-height: 118px;
+        display: grid;
+        align-content: space-between;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .issue-link:hover,
+      .issue-link:focus {
+        border-color: #9cc3f4;
+        box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.12);
+        outline: none;
+      }
+
+      .issue-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .issue-title strong {
+        font-size: 15px;
+      }
+
+      .issue-link p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
       .signal {
         position: relative;
         min-height: 70px;
@@ -622,7 +666,8 @@
 
         .grid,
         .flow,
-        .signal-board {
+        .signal-board,
+        .issue-dashboard {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -645,7 +690,8 @@
 
         .grid,
         .flow,
-        .signal-board {
+        .signal-board,
+        .issue-dashboard {
           grid-template-columns: 1fr;
         }
 
@@ -672,11 +718,11 @@
           class="panel hero-copy pitch-point"
           tabindex="0"
           data-pitch-title="Opening"
-          data-pitch-script="Budcle is not another API. It is the tool that helps existing API projects become payable by agents using Circle wallets and x402. In one sentence: we turn useful open-source APIs into agent-commerce suppliers."
+          data-pitch-script="Budcle is not another API. It is the tool that helps existing API projects become payable by agents using Circle wallets and x402. In one sentence: every useful metered API can become an agent storefront."
         >
           <div>
             <h1>Turn APIs into agent-payable suppliers.</h1>
-            <p class="subtitle">Budcle scans a repo, finds Circle/x402 gaps, and drafts the maintainer issue.</p>
+            <p class="subtitle">Budcle scans any metered API repo, finds Circle/x402 gaps, and creates the maintainer issue.</p>
           </div>
           <div class="chips">
             <span class="chip good">Firecrawl case study</span>
@@ -760,7 +806,61 @@
         </div>
         <div class="coach-script">
           <h2 id="coach-title">Opening</h2>
-          <p id="coach-script">Budcle is the missing supply-side tool for agentic commerce: it scans existing API projects and tells maintainers how to become Circle/x402-ready.</p>
+          <p id="coach-script">Budcle is the missing supply-side tool for agentic commerce: it scans existing API projects, creates maintainer issues, and tracks which APIs are moving toward Circle/x402 readiness.</p>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top: 14px">
+        <h2>Issue dashboard</h2>
+        <div class="issue-dashboard">
+          <a
+            class="issue-link pitch-point"
+            href="https://github.com/firecrawl/firecrawl/issues/3838"
+            target="_blank"
+            rel="noreferrer"
+            data-pitch-title="Tracked issue: Firecrawl"
+            data-pitch-script="Say: Firecrawl is the near-ready case. Budcle found existing x402 support and created a new trackable issue to extend it across scrape and crawl with Circle Marketplace docs and receipts."
+          >
+            <div class="issue-title"><strong>Firecrawl</strong><span class="status ok">open</span></div>
+            <p>x402-ready web data API candidate</p>
+            <span class="mini">#3838</span>
+          </a>
+          <a
+            class="issue-link pitch-point"
+            href="https://github.com/unclecode/crawl4ai/issues/2024"
+            target="_blank"
+            rel="noreferrer"
+            data-pitch-title="Tracked issue: Crawl4AI"
+            data-pitch-script="Say: Crawl4AI is another web data example. Budcle proposed a paid /x402/crawl endpoint that returns crawl output plus a receipt object."
+          >
+            <div class="issue-title"><strong>Crawl4AI</strong><span class="status ok">open</span></div>
+            <p>paid crawl endpoint proposal</p>
+            <span class="mini">#2024</span>
+          </a>
+          <a
+            class="issue-link pitch-point"
+            href="https://github.com/browserless/browserless/issues/5458"
+            target="_blank"
+            rel="noreferrer"
+            data-pitch-title="Tracked issue: Browserless"
+            data-pitch-script="Say: Browserless shows Budcle can handle browser automation APIs: screenshots, PDFs, content extraction, and browser sessions can become pay-per-action agent services."
+          >
+            <div class="issue-title"><strong>Browserless</strong><span class="status ok">open</span></div>
+            <p>pay-per-browser-action proposal</p>
+            <span class="mini">#5458</span>
+          </a>
+          <a
+            class="issue-link pitch-point"
+            href="https://github.com/LibreTranslate/LibreTranslate/issues/994"
+            target="_blank"
+            rel="noreferrer"
+            data-pitch-title="Tracked issue: LibreTranslate"
+            data-pitch-script="Say: this proves Budcle is not just about crawling. Translation is a generic metered API: pay per request, character, or batch, then return translated text plus a receipt."
+          >
+            <div class="issue-title"><strong>LibreTranslate</strong><span class="status ok">open</span></div>
+            <p>non-crawl translation API example</p>
+            <span class="mini">#994</span>
+          </a>
         </div>
       </section>
 

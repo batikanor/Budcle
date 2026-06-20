@@ -30,11 +30,12 @@ npm run analyze:firecrawl
 
 Generated reports live in `circle-readiness-agent/reports/`.
 
-Real upstream usage:
+Real upstream issue dashboard:
 
-- Firecrawl: https://github.com/firecrawl/firecrawl/issues/3279#issuecomment-4758055563
+- Firecrawl: https://github.com/firecrawl/firecrawl/issues/3838
 - Crawl4AI: https://github.com/unclecode/crawl4ai/issues/2024
 - Browserless: https://github.com/browserless/browserless/issues/5458
+- LibreTranslate: https://github.com/LibreTranslate/LibreTranslate/issues/994
 
 ## Submission Demo
 
